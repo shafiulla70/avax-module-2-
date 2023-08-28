@@ -1,41 +1,59 @@
-# Project Title
+# Degen Gaming Token
 
-Simple overview of use/purpose.
+Solidity program creates  ERC20 tokens, which can be minted by contract owners. These tokens can be used for rewards, transfer, balance checking, and burning when not needed in the in-game store.
 
-## Description
+# Description
 
-An in-depth paragraph about your project and overview of use.
+This program is a simple smart contract written in Solidity, a programming language used for Ethereum blockchain development. It imports the 'ERC20' and 'Ownable' contracts from 'OpenZepplin', and uses the ERC20 constructor to create tokens. The "mint()" function creates tokens, while the "burnTokens()" function destroys a specified amount. The "decimals()" and "getBalance()" functions return token decimals and account balances. The "storeItems" state variable lists available items, and the "redeemRewards()" function allows players to redeem rewards by exchanging them for tokens. The "transfer()" function transfers tokens to another player.
 
-## Getting Started
+## Getting started
 
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
+1. Clone the repository:
+```bash
+git clone <https://github.com/shafiulla70/avax-module-2-/edit/main/README%20(1).md>
 ```
-code blocks for commands
+3. Install the dependencies :
+ ```bash  
+cd  dengen-gaming-token
+npm i
 ```
 
-## Help
-
-Any advise for common problems or issues.
+3. Install the Openzepplin contracts:
+``` bash   
+npm install @openzeppelin/contracts
 ```
-command to run if program contains helper info
+4. Open two additional terminals in your VS code.
+In the second terminal type: `npx hardhat node`.
+
+Before running the script make sure you have enough test avax in your metamask wallet. 
+
+In the third terminal, type: `npx hardhat run scripts/main.js --network fuji`
+
+Can verify by typing: `npx hardhat verify (token address) --network fuji`
+
+To interact with various fucntions, use Remix, an online Solidity IDE. To get started, go to the Remix website . But first, connect Remix and your local file system: cd to your project and install remixd package:
+``` bash
+npm install -g @remix-project/remixd
 ```
+Check if installed and then run:
+``` bash
+remixd --version
+remixd
+```
+Now open the Remix website, click on default workspace and change it to "connect with localhost". Compile your contract. Then go to deploy section and change environment to "Injected Provider". This will help you to connect your metamask wallet. Click on deploy to deploy the contract. Now, you can use the various functions to interact with the contract and mint, burn and transfer your tokens as well as redeem rewards.
 
-## Authors
+### Transcation on snowtrace
 
-Contributors names and contact info
+If you want to check your transactions, then copy the address on which the contract is deployed and paste it  .
+This will show the transcations like mint, deployed,burn etc. 
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+## Technologies Used
+- Remix 
+- MetaMask
+- ethers.js 
+- Hardhat 
 
 
 ## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+MIT License
+Copyright (c) 2023 ShafiullaKhan Shaik
